@@ -1,3 +1,4 @@
+# Ataberk ASAR
 
 print("""<-----Rules----->
 1. BRUSH DOWN
@@ -85,7 +86,7 @@ while True:
                 elif(facing == 1):
                     facing = 3
                 elif(facing == 2):
-                    facing = 0
+                    facing = 0 # Ataberk ASAR
                 else:
                     facing = 1
 
@@ -111,3 +112,4 @@ while True:
 #9+3+1+5_3+4+5_4+4+5_3+7+6+3+5_2+4+1+5_3+2+5_2+1+3+5_9+8+0
 #5+3+1+5_3+1+3+5_2+6+2+5_2+1+7+5_4+5_3+8+0
 #7+5_2+1+6+4+5_5+3+5_2+6+2+7+4+1+5_4+8+0
+# Ataberk ASAR
