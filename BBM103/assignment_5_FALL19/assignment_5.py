@@ -1,3 +1,5 @@
+# Ataberk ASAR
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -42,7 +44,7 @@ def trainer(trainSet, weights, individual_loss_train):
         weights += update_weigths(training_inputs, arrangements)
         value = 1.0 if(outputs > 0.61) else 0.0
         acc_train[i] = value
-
+        # Ataberk ASAR
 def tester(testSet, weights, individual_loss_test):
     for i in range(len(testSet)):
         testing_inputs = testSet.loc[i+559][1:-1]
@@ -84,5 +86,7 @@ epoch_loss_plot = epoch_loss.plot(ylabel = "Loss", xlabel = "Epochs", grid=True)
 epoch_loss_plot.savefig("1_Loss.pdf")
 
 epoch_acc = pd.DataFrame({"Training":epoch_acc_train, "Testing":epoch_acc_test})
+
+# Ataberk ASAR
 epoch_acc_plot = epoch_acc.plot(ylabel = "Accuracy", xlabel = "Epochs", grid=True).get_figure()
 epoch_acc_plot.savefig("1_Acc.pdf")
