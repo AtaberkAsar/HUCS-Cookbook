@@ -1,0 +1,47 @@
+Fall 2019
+BBM 103: Introduction to Programming Laboratory I
+PROGRAMMING ASSIGNMENT 5
+Understanding Data
+
+Introduction:
+In this experiment, you will implement a simple Single Layer Neural Network in order to solve
+a real wold machine learning problem with a real world data. In this experiment, you will get
+familiar Python data science libraries such as; Pandas, NumPy, and Matplotlib. At the end,
+you will train the neural network to classify clinical cases to either benign or malignant.
+
+Part 1 - Reading Data
+1. You will read the dataset (csv le) with Pandas library. Pandas is a data
+structure and data analysis tool for Python. [5 pts]
+2. You are also expected to split your dataset into 2 sets; train and test sets.
+The training set is used to train the model. In other words, your model
+will learn from the training set and tune the weights. For the evaluation
+purposes; you will use the test set. You will obtain accuracy results on test
+set. You will use 80% of the data for training set and 20% of the data for
+test set. [5 pts]
+3. There are some values missing in the dataset. You will have complete these
+missing values using one of the techniques that you learn in your class. [10
+pts]
+4. You are also expected to visualize pairwise correlations of the attributes of
+training set. You will use matplotlib for that task. [10 pts]
+
+Part 2 - Implementing a Single Layer Neural Network
+you do not have to implement from scratch. You are expected to complete
+the given code. You have to implement forward and backward propagation
+using numpy library. [20 pts for forward propagation, 20 pts for backward
+propagation]
+
+Part 3 - Plot Loss and Accuracy in each Iteration for Test Set
+1. to predict the nal value( either 0 or 1) for each row(sample) in your test
+set. You will map each test output row into 0 or 1 by checking if the value is
+greater than 0.5 or else. If the value is greater than 0.5 then your prediction
+is 1 and else is 0. [10 pts]
+2. plot accuracy change in test set for each iteration. You will also expected
+to plot loss change in each iteration. Your loss matrix will have more than
+one values in order to plot a loss value you will average the loss matrix in
+each iteration. [20 pts]
+
+The aim of this assignment is;
+1. Learning to use libraries
+2. Learning to understand and analyse a given problem
+3. The resulting accuracy percantage is not important. The important part is to 
+understand the problem and implementing it.
