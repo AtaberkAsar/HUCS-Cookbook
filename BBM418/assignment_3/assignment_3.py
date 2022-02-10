@@ -1,3 +1,5 @@
+# Ataberk ASAR
+
 import os
 
 import splitfolders
@@ -18,8 +20,9 @@ import numpy as np
 physical_devices = tf.config.list_physical_devices("GPU")
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-root = 'C:/Users/usr/Desktop/Dataset/'
-save_root = 'C:/Users/usr/Desktop/My_Dataset/'
+dirname = os.path.dirname(__file__)
+root = os.path.join(dirname, 'Dataset/')
+save_root = os.path.join(dirname, 'MyDataset/')
 
 if not os.path.exists(save_root + 'train/'):
     splitfolders.ratio(root, save_root, seed = 42, ratio = (.65, .15, .2))
@@ -66,7 +69,7 @@ test_gen = ImageDataGenerator(
 batch_size = 64
 
 ds_train = train_gen.flow_from_directory(
-    'C:/Users/usr/Desktop/My_Dataset/train',
+    os.path.join(dirname, 'MyDataset/train'),
     target_size = (128, 128), # (64, 64) if not ResNet50
     batch_size = batch_size,
     class_mode = 'categorical',
@@ -74,7 +77,7 @@ ds_train = train_gen.flow_from_directory(
 )
 
 ds_valid = valid_gen.flow_from_directory(
-    'C:/Users/usr/Desktop/My_Dataset/val',
+    os.path.join(dirname, 'MyDataset/val'),
     target_size = (128, 128), # (64, 64) if not ResNet50
     batch_size = batch_size,
     class_mode = 'categorical',
@@ -82,7 +85,7 @@ ds_valid = valid_gen.flow_from_directory(
 )
 
 ds_test = test_gen.flow_from_directory(
-    'C:/Users/usr/Desktop/My_Dataset/test',
+    os.path.join(dirname, 'MyDataset/test'),
     target_size = (128, 128), # (64, 64) if not ResNet50
     batch_size = batch_size,
     class_mode = 'categorical',
@@ -97,7 +100,7 @@ num_test = ds_test.samples
 class CNNBlock(layers.Layer):
     def __init__(self, out_channels, kernel_size = 3): # 13
         super(CNNBlock, self).__init__()
-        self.conv = layers.Conv2D(out_channels, kernel_size, padding = 'same', kernel_regularizer = regularizers.l2(0.001)) #l2 0.001  #same
+        self.conv = layers.Conv2D(out_channels, kernel_size, padding = 'same', kernel_regularizer = regularizers.l2(0.001))
         self.bn = layers.BatchNormalization()
 
     def call(self, input_tensor, training = False):
@@ -200,3 +203,5 @@ predictions = new_model.predict(ds_test, batch_size = batch_size).argmax(axis = 
 cm = confusion_matrix(ds_test.classes, predictions)
 
 plot_confusion_matrix(cm, classes)
+
+# Ataberk ASAR
