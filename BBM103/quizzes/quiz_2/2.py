@@ -1,3 +1,6 @@
+# Find list of even numbers, sum of even numbers, and rate of even numbers (ie. sum of even / sum of all) in a given string of numbers, seperated by ','
+# Ignore negative numbers
+
 import sys
 
 givenString = sys.argv[1]
