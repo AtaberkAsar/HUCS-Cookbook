@@ -1,3 +1,5 @@
+# Find solution for a quadratic equation ax^2 + bx + c = 0
+
 import sys
 
 a = int(sys.argv[1])
