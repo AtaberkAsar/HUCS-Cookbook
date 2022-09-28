@@ -12,3 +12,7 @@
 > [BBM418 Computer Vision Lab:](https://github.com/AtaberkAsar/hello_world/tree/main/BBM418)
 >
 > Practical applications of digital image fundamentals. Linear image filtering and correlation, non-linear filtering, image enhancement, histogram modification techniques, image restoration, image compression, frequency domain processing and segmentation.
+
+> [BBM104 Introduction to Programming Lab II](https://github.com/AtaberkAsar/hello_world/tree/main/BBM104)
+>
+> Basic concepts of object oriented programming. Introduction to learning of an object oriented programming language. Class, object, encapsulation, inheritance, polymorphism, abstract class and interface. Access specifiers and messaging. Exception handling concepts.
