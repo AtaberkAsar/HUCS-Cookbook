@@ -1,0 +1,20 @@
+Calculating Armstrong numbers
+10000
+Ascending order sorting
+1
+3
+2
+6
+4
+-1
+Descending order sorting
+10
+30
+15
+100
+25
+9
+-1
+Exit
+Calculating Armstrong numbers
+10000
