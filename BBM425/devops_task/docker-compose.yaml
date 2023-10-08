@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:15
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: ResultDB
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server
+    volumes:
+      - redis_volume_data:/data
+    depends_on:
+      - postgres
+
+  server:
+    build: 
+      context: .
+      dockerfile: server/Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - server
+
+
+volumes:
+  redis_volume_data:

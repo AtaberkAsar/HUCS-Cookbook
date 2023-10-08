@@ -1,0 +1,8 @@
+__pycache__/
+server/__pycache__/
+*.ipynb
+*.txt
+
+*.env
+*.env.*
+env.*
